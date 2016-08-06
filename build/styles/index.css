@@ -1,0 +1,17 @@
+*{box-sizing: border-box; }
+body{ padding: 2%; padding-top: 0; }
+p.error{
+    color: red;
+    font-style: italic;
+}
+form .ng-invalid.ng-dirty { background-color: lightpink; }
+form .ng-valid.ng-dirty { background-color: lightgreen; }
+form .warning.ng-dirty.ng-valid { background-color: lightpink; }
+.verticalAlign {  padding-top: 5px;  }
+.centerBox { margin: 0 20%; }
+.picture:hover{
+    transform: rotate(5deg) scale(1.1);
+}
+.verticalAlignContainer{
+    margin-top: 3%;
+}
