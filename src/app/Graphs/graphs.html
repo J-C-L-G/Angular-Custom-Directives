@@ -1,0 +1,39 @@
+<h1>Graphs</h1>
+<ng-include src="'app/Graphs/templates/menu.html'"></ng-include>
+<div class="row">
+    <div class="col-md-12">
+        <div graph-directive
+             type="line"
+             title="This is a Line Graph"
+             subtitle="This is a subtitle"
+             source="dataLine"
+             measurein="Temperature C"
+             suffix=" C">
+        </div>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-md-12">
+        <div graph-directive
+             type="column"
+             title="This is a Bar Graph"
+             subtitle="This is a subtitle"
+             source="dataBar"
+             measurein="Units Sold"
+             suffix=" Units">
+        </div>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-md-12">
+        <div pie-graph-directive
+             title="This is a Pie Graph"
+             subtitle="This is a subtitle"
+             source="dataPie"
+             measurein="Browser Share"
+             suffix=" %">
+        </div>
+    </div>
+</div>
