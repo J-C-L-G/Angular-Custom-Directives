@@ -1,0 +1,33 @@
+{
+  "name": "Angular-Custom-Directives",
+  "authors": [
+    "J-C-L-G <ps_jclg@hotmail.com>"
+  ],
+  "description": "Custom directives for ANgularJS",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "angular",
+    "validation",
+    "graphs",
+    "spread",
+    "sheet"
+  ],
+  "license": "MIT",
+  "homepage": "www.jclgblog.wordpress.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-resource": "~1.4.7",
+    "angular": "~1.4.7",
+    "angular-route": "~1.4.7",
+    "bootstrap": "~3.3.5",
+    "handsontable": "~0.20.1"
+  }
+}
