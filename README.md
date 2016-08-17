@@ -1,10 +1,8 @@
 # AngularJS Custom Directives
 <Enter>
-<Enter>
-##Reusable Directives for Angular JS!
-<Enter>
-<Enter>
+
+##Custom Reusable Directives for Angular JS!
+
 ![AngularJS](https://upload.wikimedia.org/wikipedia/commons/a/a3/AngularJS-huge.png "AngularJS")
-<Enter>
-<Enter>
-Check the demo: [GitHub Pages](https://j-c-l-g.github.io/Angular-Custom-Directives/).
+
+Example: [Live Demo](https://j-c-l-g.github.io/Angular-Custom-Directives/).
