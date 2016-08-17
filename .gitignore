@@ -1,8 +1,1 @@
 .idea
-bower_components
-node_modules
-src
-Gulpfile.js
-bower.json
-package.json
-README.md
