@@ -5,8 +5,12 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="description" content="AngularJS : Custom Directives">
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/stylesheets/stylesheet.css">
-    <link rel="stylesheet" type="text/css" href="assets/stylesheets/home.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="assets/stylesheets/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="assets/stylesheets/bootstrap-theme.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="assets/stylesheets/handsontable.full.min.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="assets/stylesheets/stylesheet.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="assets/stylesheets/form_validation.css">
+      <link rel="stylesheet" type="text/css" href="assets/stylesheets/home.css">
     <title>AngularJS Custom Directives</title>
   </head>
 
@@ -46,16 +50,67 @@
             <hr>
         </section>
 
-        <section id="example_content" class="inner">
-            <h3>
-                <a id="instructions" class="anchor" href="#instructions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Instructions</h3>
-            <p><strong>Creating Notes</strong></p>
-            <ol>
-                <li><strong>Click</strong> on the <strong>"Create Note"</strong> button and provide a title and message.</li>
-            </ol>
-            <img src="assets/images/Step1.jpg" alt="Step 1" title="Step 1" width="550" height="400" />
-            <br />
-            <hr>
+        <section id="example_content" class="inner" ng-app="angExc">
+            <div id="Charts">
+                <h3>
+                    <a class="anchor" href="#Charts" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Charts
+                </h3>
+                <p><strong>Custom Directive to display data in charts:</strong></p>
+                <ul class="codeClass">
+                    <li>&lt graph-directive type='line' &gt</li>
+                    <li>&lt graph-directive type='column' &gt</li>
+                    <li>&lt pie-graph-directive &gt</li>
+                </ul>
+                <div ng-include="'assets/app/Graphs/graphs.html'" ng-controller="GraphsController"></div>
+                <br />
+                <hr>
+            </div>
+            <div id="formValidation">
+                <h3>
+                    <a class="anchor" href="#formValidation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Form Validation
+                </h3>
+                <p><strong>Custom Directive to perform client side validation:</strong></p>
+                <ul class="codeClass">
+                    <li>&lt custom-error-message-directive &gt</li>
+                    <li>&lt value-match-directive &gt</li>
+                    <li>&lt ensure-type-directive &gt</li>
+                </ul>
+                <div ng-include="'assets/app/Form/form.html'" ng-controller="FormController"></div>
+                <br />
+                <hr>
+            </div>
+            <div id="spreadSheet">
+                <h3>
+                    <a class="anchor" href="#spreadSheet" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Spreadsheet
+                </h3>
+                <p><strong>Custom Directive to display tabular data and broadcast data changes:</strong></p>
+                <p><em>When the data changes in the spreadsheet, the directive emits an event allowing other directives subscribed to this event update its data accordingly.</em></p>
+                <ul class="codeClass">
+                    <li>&lt spread-sheet-directive source='dataInScope' &gt</li>
+                </ul>
+                <div ng-controller="GraphsController">
+                    <div ng-include="'assets/app/Graphs/templates/bar.html'"></div>
+                    <br /><hr /><br />
+                    <div ng-include="'assets/app/Graphs/templates/line.html'"></div>
+                    <br /><hr /><br />
+                    <div ng-include="'assets/app/Graphs/templates/pie.html'"></div>
+                    <br /><hr /><br />
+                </div>
+                <br />
+                <hr>
+            </div>
+            <div id="infiniteScroll">
+                <h3>
+                    <a class="anchor" href="#infiniteScroll" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Image Scroll
+                </h3>
+                <p><strong>Custom Directive to display images from a Flickr Feed:</strong></p>
+                <ul class="codeClass">
+                    <li>&lt infinite-scroll-directive &gt</li>
+                </ul>
+                <div ng-include="'assets/app/InfiniteScroll/infiniteScroll.html'" ng-controller="infiniteScrollController"></div>
+                <br />
+                <hr>
+            </div>
         </section>
 
         <section id="contributor_content" class="inner">
@@ -74,5 +129,33 @@
         </footer>
     </div>
 
+    <!-- Dependencies -->
+    <script src="assets/javascripts/jquery.min.js"></script>
+    <script src="assets/javascripts/handsontable.full.min.js"></script>
+    <script src="assets/javascripts/highcharts.js"></script>
+    <script src="assets/javascripts/highcharts-3d.js"></script>
+    <script src="assets/javascripts/exporting.js"></script>
+    <script src="assets/javascripts/angular.min.js" type="text/javascript"></script>
+    <script src="assets/app/angExc.Module.js" type="text/javascript"></script>
+    <!-- Directives -->
+    <script src="assets/app/Directives/censoredDirective.js" type="application/javascript"></script>
+    <script src="assets/app/Directives/customErrorMessageDirective.js" type="application/javascript"></script>
+    <script src="assets/app/Directives/ensureTypeDirective.js" type="application/javascript"></script>
+    <script src="assets/app/Directives/graphDirective.js" type="application/javascript"></script>
+    <script src="assets/app/Directives/infiniteScrollDirective.js" type="application/javascript"></script>
+    <script src="assets/app/Directives/pieGraphDirective.js" type="application/javascript"></script>
+    <script src="assets/app/Directives/spreadSheetDirective.js" type="application/javascript"></script>
+    <script src="assets/app/Directives/valueMatchDirective.js" type="application/javascript"></script>
+    <script src="assets/app/Directives/visibleDirective.js" type="application/javascript"></script>
+    <!-- Controllers -->
+    <script src="assets/app/Form/FormController.js" type="application/javascript"></script>
+    <script src="assets/app/Graphs/GraphsController.js" type="application/javascript"></script>
+    <script src="assets/app/InfiniteScroll/infiniteScrollController.js" type="application/javascript"></script>
+    <script src="assets/app/SpreadSheet/SpreadSheetController.js" type="application/javascript"></script>
+    <script src="assets/app/Text/TextController.js" type="application/javascript"></script>
+    <!-- Services -->
+    <script src="assets/app/Services/flickrFeedService.js" type="application/javascript"></script>
+    <script src="assets/app/Services/handsontableService.js" type="application/javascript"></script>
+    <script src="assets/app/Services/highchartsService.js" type="application/javascript"></script>
   </body>
 </html>

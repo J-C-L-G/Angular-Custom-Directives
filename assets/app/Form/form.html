@@ -1,0 +1,44 @@
+<form class="form-horizontal" name="excForm" novalidate ng-submit="register()">
+    <div class="well">
+        <fieldset>
+            <legend class="text-center">Account Information</legend>
+            <div class="form-group small">
+                <label>Username:</label>
+                <input name="username" type="text" class="form-control" required ng-model="newUser.username"
+                       ensure-type-directive ensure="alphanumeric" custom-error-message-directive/>
+                <label>Password</label>
+                <input name="password" type="password" class="form-control" required ng-model="newUser.password"
+                       ensure-type-directive ensure="alphanumeric" custom-error-message-directive/>
+                <label>Confirm Password</label>
+                <input name="confirmPassword" type="password" class="form-control" required
+                       ng-model="newUser.confirmPassword"
+                       ng-class="excForm.confirmPassword.$error.equal ? 'warning' : ''"
+                       value-match-directive against="newUser.password"
+                       ensure-type-directive ensure="alphanumeric" />
+            </div>
+        </fieldset>
+    </div>
+    <div class="well">
+        <fieldset>
+            <legend class="text-center">Personal Information</legend>
+            <div class="form-group small">
+                <label>Name:</label>
+                <input name="name" type="text" class="form-control" required ng-model="newUser.name"
+                       ensure-type-directive ensure="alphabetic" custom-error-message-directive/>
+                <label>Age:</label>
+                <input name="age" type="text" class="form-control" required ng-model="newUser.age" ensure-type-directive
+                       ensure="numeric" minValue="18" maxValue="90" custom-error-message-directive
+                       errorMessage="This field only accepts numeric characters (0-9). NOTE: valid Range from 18-90"/>
+                <label>Birthday:</label>
+                <input name="birthday" type="date" class="form-control" required ng-model="newUser.birthday"
+                       ensure-type-directive ensure="date" minAge="true" minvalue="18"
+                       custom-error-message-directive errorMessage="Your birthday is not valid for 18+ age."/>
+                <label>Date Range:</label>
+                <input name="dateRange" type="date" class="form-control" required ng-model="newUser.dateRange"
+                       ensure-type-directive ensure="date" minDate="2015-01-01" maxDate="2015-12-31"
+                       custom-error-message-directive errorMessage="Please provide a valid date between 2015-01-01 to 2015-12-31"/>
+            </div>
+        </fieldset>
+    </div>
+    <button type="submit" class="btn btn-success btn-block" ng-disabled="excForm.$invalid">Register</button>
+</form>

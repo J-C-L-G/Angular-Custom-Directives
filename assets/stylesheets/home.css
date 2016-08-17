@@ -16,6 +16,11 @@
     list-style: none;
 }
 
+.codeClass{
+ font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    font-weight: bold;
+}
+
 .techStack li{
     display: inline-block;
 }
