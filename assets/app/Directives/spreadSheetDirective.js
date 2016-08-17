@@ -21,7 +21,6 @@ angular.module('angExc')
                         colHeaders: true,
                         contextMenu: true,
                         beforeChange : function(operation){
-                            console.log(operation);
                             var row = operation[0][0];
                             var col = operation[0][1];
                             var newValue = operation[0][3];
